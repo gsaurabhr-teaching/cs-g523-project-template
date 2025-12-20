@@ -1,7 +1,22 @@
 <details>
-  <summary><strong>{{ include.title }}</strong></summary>
+  <summary>
+    <h1 style="display:inline;">{{ include.title }}</h1>
+  </summary>
 
-  <div style="margin-left: 1em; margin-top: 0.5em;">
-    {% include_relative sections/{{ include.file }} %}
+  <div class="section-content">
+    {% capture section_content %}
+      {% include_relative sections/{{ include.file }} %}
+    {% endcapture %}
+
+    {{ section_content
+       | replace: '<h1', '<h2'
+       | replace: '</h1>', '</h2>'
+       | replace: '<h2', '<h3'
+       | replace: '</h2>', '</h3>'
+       | replace: '<h3', '<h4'
+       | replace: '</h3>', '</h4>'
+       | replace: '<h4', '<h5'
+       | replace: '</h4>', '</h5>'
+    }}
   </div>
 </details>
