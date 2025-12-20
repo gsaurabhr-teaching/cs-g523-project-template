@@ -1,0 +1,1 @@
+Example multicore and IPC description.

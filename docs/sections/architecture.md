@@ -1,0 +1,1 @@
+Example architecture description.
