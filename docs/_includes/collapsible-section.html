@@ -1,9 +1,7 @@
 <details>
   <summary><strong>{{ include.title }}</strong></summary>
-  <div style="margin-left:1em;margin-top:0.5em;">
-    {% capture section_content %}
-      {% include_relative sections/{{ include.file }} %}
-    {% endcapture %}
-    {{ section_content | markdownify }}
+
+  <div style="margin-left: 1em; margin-top: 0.5em;">
+    {% include_relative sections/{{ include.file }} %}
   </div>
 </details>
