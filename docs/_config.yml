@@ -1,6 +1,6 @@
 title: "CS G523 Embedded Project"
 description: "Event-driven, safety-critical embedded system"
-theme: zer0-mistakes
+remote_theme: bamr87/zer0-mistakes
 markdown: kramdown
 kramdown:
   input: GFM
