@@ -6,3 +6,4 @@ kramdown:
   input: GFM
 plugins:
   - jekyll-include-cache
+  - jekyll-remote-theme

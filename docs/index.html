@@ -4,6 +4,12 @@ title: "Multicore Safety-Critical Embedded System"
 mermaid: true
 ---
 
+<div class="mermaid">
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Active
+</div>
+
 {% include collapsible-section.html title="Introduction" file="intro.md" %}
 {% include collapsible-section.html title="Requirements" file="requirements.md" %}
 {% include collapsible-section.html title="SDLC and Traceability" file="sdlc-traceability.md" %}
