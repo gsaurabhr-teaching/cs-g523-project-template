@@ -1,0 +1,8 @@
+<section id="{{ include.id }}" class="page-section">
+  <div class="container">
+    <h2 class="section-heading text-uppercase">{{ include.title }}</h2>
+    <div class="section-content">
+      {% include_relative sections/{{ include.file }} %}
+    </div>
+  </div>
+</section>

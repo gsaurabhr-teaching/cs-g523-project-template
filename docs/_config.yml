@@ -1,9 +1,8 @@
 title: "CS G523 Embedded Project"
 description: "Event-driven, safety-critical embedded system"
-remote_theme: bamr87/zer0-mistakes
+remote_theme: raviriley/agency-jekyll-theme
 markdown: kramdown
 kramdown:
   input: GFM
 plugins:
   - jekyll-include-cache
-  - jekyll-remote-theme

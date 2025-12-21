@@ -1,1 +1,7 @@
-Example requirements section.
+# Requirements
+
+```mermaid
+stateDiagram-v2
+[*] --> Idle
+Idle --> Active
+```

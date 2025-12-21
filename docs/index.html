@@ -1,22 +1,9 @@
 ---
 layout: default
-title: "Multicore Safety-Critical Embedded System"
-mermaid: true
-type: default
-slug: features
 ---
 
-<div class="mermaid">
-stateDiagram-v2
-    [*] --> Idle
-    Idle --> Active
-</div>
-
-{% include collapsible-section.html title="Introduction" file="intro.md" %}
-{% include collapsible-section.html title="Requirements" file="requirements.md" %}
-{% include collapsible-section.html title="SDLC and Traceability" file="sdlc-traceability.md" %}
-{% include collapsible-section.html title="UML State Charts" file="uml-statecharts.md" %}
-{% include collapsible-section.html title="Architecture" file="architecture.md" %}
-{% include collapsible-section.html title="Multicore and IPC" file="multicore-ipc.md" %}
-{% include collapsible-section.html title="Testing and Verification" file="testing-verification.md" %}
-{% include collapsible-section.html title="Lessons Learned" file="lessons-learned.md" %}
+{% include section.html id="intro" title="Introduction" file="intro.md" %}
+{% include section.html id="requirements" title="Requirements" file="requirements.md" %}
+{% include section.html id="uml" title="UML State Charts" file="uml-statecharts.md" %}
+{% include section.html id="architecture" title="Architecture" file="architecture.md" %}
+{% include section.html id="testing" title="Testing and Verification" file="testing-verification.md" %}

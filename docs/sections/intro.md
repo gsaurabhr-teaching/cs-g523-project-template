@@ -1,1 +1,3 @@
-Example introduction section.
+# Introduction
+
+Example intro text.

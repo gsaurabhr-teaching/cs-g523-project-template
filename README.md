@@ -1,3 +1,3 @@
-# CS G523 – Embedded Software Capstone Project
+# CS G523 Embedded Software Project Template
 
-Starter template repository.
+Agency theme + Mermaid fenced block support.

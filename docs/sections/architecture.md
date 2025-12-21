@@ -1,1 +1,3 @@
-Example architecture description.
+# Architecture
+
+Architecture description.

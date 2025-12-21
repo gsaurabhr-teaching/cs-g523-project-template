@@ -1,1 +1,3 @@
-Example testing strategy.
+# Testing
+
+Testing strategy.
