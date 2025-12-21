@@ -165,6 +165,10 @@
   .floating-toc.mobile-visible {
     transform: translateX(0);
   }
+
+  .page-sections {
+    margin-left: 3rem;  /* adjust if you change hamburger size */
+  }
 }
 
 /* ===== Project Banner ===== */
