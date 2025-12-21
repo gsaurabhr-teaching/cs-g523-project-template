@@ -84,3 +84,31 @@
     margin-left: 0;
   }
 }
+
+/* Mobile TOC toggle button */
+.mobile-toc-button {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 10px;
+  z-index: 1100;
+  background: #0056b3;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* Mobile behavior */
+@media (max-width: 992px) {
+  .mobile-toc-button {
+    display: block;
+  }
+
+  .floating-toc {
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+}

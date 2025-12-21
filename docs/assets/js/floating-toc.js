@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const expandAllBtn = document.getElementById("toc-expand-all");
   const collapseAllBtn = document.getElementById("toc-collapse-all");
   const mobileToggleBtn = document.getElementById("toc-toggle-mobile");
+  const mobileButton = document.getElementById("mobile-toc-button");
 
   if (!toc || !tocList) return;
 
@@ -80,9 +81,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ===== Mobile toggle ===== */
 
-  mobileToggleBtn.onclick = () => {
-    toc.classList.toggle("mobile-visible");
-  };
+  if (mobileButton) {
+    mobileButton.addEventListener("click", () => {
+        toc.classList.toggle("mobile-visible");
+    });
+  }
 
   /* ===== Scroll spy ===== */
 
@@ -111,6 +114,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // Auto-expand parent section
       const sectionLi = activeLink.closest(".toc-section");
       if (sectionLi) sectionLi.classList.add("expanded");
+    }
+
+    if (window.innerWidth < 992) {
+       toc.classList.remove("mobile-visible");
     }
   }
 
