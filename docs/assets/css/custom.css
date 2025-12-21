@@ -167,7 +167,7 @@
   }
 
   .page-sections {
-    margin-left: 1.5rem;  /* adjust if you change hamburger size */
+    margin-left: 3rem;  /* adjust if you change hamburger size */
   }
 }
 
@@ -249,48 +249,4 @@ img {
   margin: 1.2rem auto 0 auto;
   max-width: 100%;
   height: auto;
-}
-
-/* ===== Global overflow safety ===== */
-
-/* Images, SVGs, and video should never overflow horizontally */
-img,
-svg,
-video,
-canvas {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Mermaid diagrams (rendered as SVG) */
-.mermaid svg {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Prevent long code lines from forcing horizontal scroll */
-pre,
-code {
-  max-width: 100%;
-  overflow-x: auto;
-  box-sizing: border-box;
-}
-
-/* Tables: allow horizontal scroll *inside* table, not page */
-table {
-  max-width: 100%;
-  display: block;
-  overflow-x: auto;
-  border-collapse: collapse;
-}
-
-/* Final safeguard */
-html,
-body {
-  overflow-x: hidden;
-}
-
-img {
-  border-radius: 4px;
 }
