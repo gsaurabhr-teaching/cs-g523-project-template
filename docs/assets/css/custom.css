@@ -223,3 +223,26 @@
   flex: 1;
   padding-left: 2rem;
 }
+
+/* ===== Figure caption styling ===== */
+
+/* Images followed by italic caption text */
+img + em,
+img + p > em {
+  display: block;
+  margin-top: 0.4rem;
+  margin-bottom: 1.5rem;
+
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Center images by default */
+img {
+  display: block;
+  margin: 1.2rem auto 0 auto;
+  max-width: 100%;
+  height: auto;
+}
