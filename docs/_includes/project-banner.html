@@ -1,0 +1,17 @@
+<header class="project-banner">
+  <div class="banner-content">
+    <h1 class="project-title">
+      {{ site.title | default: "Embedded Software Project" }}
+    </h1>
+
+    <p class="project-subtitle">
+      {{ site.description | default: "Event-driven, safety-critical embedded system" }}
+    </p>
+
+    {% if site.project_meta %}
+    <div class="project-meta">
+      {{ site.project_meta }}
+    </div>
+    {% endif %}
+  </div>
+</header>
