@@ -3,8 +3,21 @@
   position: relative;
   display: flex;
   align-items: flex-start;
-  max-width: 100%;
+  width: 100%;
   overflow-x: clip;   /* NOT hidden */
+  box-sizing: border-box;
+}
+
+.page-shell *,
+.page-shell *::before,
+.page-shell *::after {
+  box-sizing: border-box;
+}
+
+.page-sections .container {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 /* ===== Floating TOC ===== */
@@ -226,7 +239,8 @@
 }
 
 .page-sections {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
   padding-left: 2rem;
 }
 
