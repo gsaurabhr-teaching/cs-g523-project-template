@@ -1,3 +1,11 @@
+const banner = document.querySelector(".project-banner");
+if (banner) {
+  document.documentElement.style.setProperty(
+    "--banner-height",
+    `${banner.offsetHeight}px`
+  );
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const toc = document.getElementById("floating-toc");
   const tocList = document.getElementById("toc-list");

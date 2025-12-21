@@ -1,8 +1,9 @@
 /* ===== Floating TOC ===== */
 
 .floating-toc {
-  position: fixed;
-  top: 80px;
+  position: sticky;
+  top: calc(var(--banner-height, 280px) + 20px);
+  align-self: flex-start;
   left: 0;
   width: 280px;
   height: calc(100vh - 100px);
@@ -36,6 +37,19 @@
   list-style: none;
   padding-left: 0;
   margin: 0;
+}
+
+/* TOC vertical spacing */
+#toc-list > li {
+  margin-bottom: 0.75rem;
+}
+
+.toc-section > ul > li {
+  margin-bottom: 0.5rem;
+}
+
+.floating-toc a {
+  line-height: 1.4;
 }
 
 .toc-section > ul {
@@ -110,18 +124,28 @@
   .floating-toc {
     top: 60px;
     height: calc(100vh - 60px);
+    background: rgba(248, 249, 250, 0.75);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 2px 0 12px rgba(0,0,0,0.15);
   }
 }
 
 /* ===== Project Banner ===== */
 
 .project-banner {
-  width: 100%;
-  background: linear-gradient(135deg, #003366, #0056b3);
+  background:
+    linear-gradient(135deg, rgba(0,40,80,0.85), rgba(0,86,179,0.85)),
+    var(--banner-image, linear-gradient(135deg, #003366, #0056b3));
+  background-size: cover;
+  background-position: center;
   color: #ffffff;
-  padding: 2.5rem 1rem 2rem 1rem;
-  box-sizing: border-box;
 }
+
+.banner-overlay {
+  padding: 2.5rem 1rem 2rem 1rem;
+}
+
 
 .banner-content {
   max-width: 1100px;
