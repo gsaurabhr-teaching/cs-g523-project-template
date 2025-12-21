@@ -147,6 +147,7 @@
     top: 0;
     left: 0;
     height: 100vh;          /* full vertical space */
+    padding-top: calc(0.5rem + 2.2rem + 0.5rem); /* space for hamburger button */
     transform: translateX(-100%);
     background: rgba(248, 249, 250, 0.75);
     -webkit-backdrop-filter: blur(7px);
@@ -208,5 +209,12 @@
 
   .project-subtitle {
     font-size: 1rem;
+  }
+}
+
+/* Remove extra top gap before first section (desktop) */
+@media (min-width: 992px) {
+  section.page-section:first-of-type .section-heading {
+    margin-top: 0;
   }
 }
