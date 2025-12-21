@@ -1,14 +1,13 @@
 /* ===== Floating TOC ===== */
 
 .floating-toc {
-  position: sticky;
+  position: fixed;
   top: 0rem;
   margin-top: 0rem;
   align-self: flex-start;
   left: 0;
   width: 280px;
-  height: auto;
-  max-height: 100vh;
+  height: 100vh;
   overflow-y: auto;
   background: #f8f9fa;
   border-right: 1px solid #ddd;
