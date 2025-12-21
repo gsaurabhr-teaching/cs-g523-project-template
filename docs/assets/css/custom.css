@@ -1,13 +1,23 @@
+/* Page grid: banner + body */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+body > *:not(header.project-banner) {
+  grid-row: 2;
+}
+
 /* ===== Floating TOC ===== */
 
 .floating-toc {
-  position: fixed;
+  position: sticky;
   top: 0rem;
   margin-top: 0rem;
   align-self: flex-start;
   left: 0;
   width: 280px;
-  height: 100vh;
+  height: 100%;
   overflow-y: auto;
   background: #f8f9fa;
   border-right: 1px solid #ddd;
@@ -81,7 +91,7 @@
 /* ===== Layout offset ===== */
 /* Push main content right so it doesn't go under TOC */
 .page-section {
-  margin-left: 300px;
+  /* margin-left: 300px; */
   padding-top: 2.5rem;
   padding-bottom: 3rem;
   /* margin: 0; */
