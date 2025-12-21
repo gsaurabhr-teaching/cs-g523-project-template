@@ -246,7 +246,7 @@ img + p > em {
 }
 
 /* Center images by default */
-img {
+.page-sections img {
   display: block;
   margin: 1.2rem auto 0 auto;
   max-width: 100%;
