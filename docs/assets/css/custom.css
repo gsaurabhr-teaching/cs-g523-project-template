@@ -283,3 +283,10 @@ img + p > em {
   width: 100%;
   height: auto;
 }
+
+.mermaid svg {
+  cursor: grab;
+}
+.mermaid svg:active {
+  cursor: grabbing;
+}

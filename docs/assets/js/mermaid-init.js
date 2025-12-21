@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
     pre.replaceWith(div);
   });
   if (document.querySelector('.mermaid')) {
-    mermaid.initialize({ startOnLoad: true });
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "default",
+      flowchart: { useMaxWidth: true },
+      securityLevel: "loose"
+    });
   }
 });
