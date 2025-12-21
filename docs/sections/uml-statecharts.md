@@ -11,3 +11,4 @@ stateDiagram-v2
     Active --> Fault : error_detected
     Fault --> Safe : recovery_complete
     Safe --> Idle
+```
