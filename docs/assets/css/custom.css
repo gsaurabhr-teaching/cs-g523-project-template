@@ -3,6 +3,8 @@
   position: relative;
   display: flex;
   align-items: flex-start;
+  max-width: 100%;
+  overflow-x: clip;   /* NOT hidden */
 }
 
 /* ===== Floating TOC ===== */
@@ -248,5 +250,20 @@ img {
   display: block;
   margin: 1.2rem auto 0 auto;
   max-width: 100%;
+  height: auto;
+}
+
+.page-sections pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* 2. Constrain Mermaid diagrams */
+.mermaid {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.mermaid svg {
+  width: 100%;
   height: auto;
 }
