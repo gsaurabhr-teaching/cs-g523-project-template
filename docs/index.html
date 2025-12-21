@@ -2,6 +2,15 @@
 layout: default
 ---
 
+<nav id="floating-toc" class="floating-toc collapsed">
+  <div class="toc-header">
+    <span>Contents</span>
+    <button id="toc-toggle">☰</button>
+  </div>
+  <ul id="toc-list"></ul>
+</nav>
+
+
 {% include section.html id="intro" title="Introduction" file="intro.md" %}
 {% include section.html id="requirements" title="Requirements" file="requirements.md" %}
 {% include section.html id="uml" title="UML State Charts" file="uml-statecharts.md" %}
