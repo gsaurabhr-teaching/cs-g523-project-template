@@ -7,7 +7,8 @@
   align-self: flex-start;
   left: 0;
   width: 280px;
-  height: 100vh;
+  height: auto;
+  max-height: 100vh;
   overflow-y: auto;
   background: #f8f9fa;
   border-right: 1px solid #ddd;
@@ -147,7 +148,7 @@
     top: 0;
     left: 0;
     height: 100vh;          /* full vertical space */
-    padding-top: calc(0.5rem + 2.2rem + 0.5rem); /* space for hamburger button */
+    padding-top: 4rem; /* space for hamburger button */
     transform: translateX(-100%);
     background: rgba(248, 249, 250, 0.75);
     -webkit-backdrop-filter: blur(7px);
