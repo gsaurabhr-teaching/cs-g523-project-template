@@ -1,19 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const tocList = document.getElementById("toc-list");
   const toc = document.getElementById("floating-toc");
-  const toggleBtn = document.getElementById("toc-toggle");
+  const tocList = document.getElementById("toc-list");
+  const expandAllBtn = document.getElementById("toc-expand-all");
+  const collapseAllBtn = document.getElementById("toc-collapse-all");
+  const mobileToggleBtn = document.getElementById("toc-toggle-mobile");
 
-  if (!tocList || !toc) return;
+  if (!toc || !tocList) return;
 
-  // Utility: generate stable IDs
   function slugify(text) {
-    return text.toLowerCase()
-      .trim()
+    return text.toLowerCase().trim()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/(^-|-$)/g, "");
   }
 
-  // Find all top-level sections
+  /* ===== Build TOC ===== */
+
+  const sectionMap = [];
+
   document.querySelectorAll("section.page-section").forEach(section => {
     const sectionHeading = section.querySelector(".section-heading");
     if (!sectionHeading) return;
@@ -22,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const sectionId = section.id || slugify(sectionTitle);
     section.id = sectionId;
 
-    // Section TOC entry
     const li = document.createElement("li");
     li.className = "toc-section";
 
@@ -33,13 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     li.appendChild(a);
 
-    // Inner headings (collapsed by default)
-    const innerList = document.createElement("ul");
-    innerList.className = "toc-sublist";
+    const subList = document.createElement("ul");
 
     section.querySelectorAll(".section-content h1, .section-content h2, .section-content h3")
       .forEach(h => {
-        if (!h.id) h.id = slugify(sectionId + "-" + h.textContent);
+        if (!h.id) {
+          h.id = slugify(sectionId + "-" + h.textContent);
+        }
 
         const subLi = document.createElement("li");
         subLi.className = `toc-${h.tagName.toLowerCase()}`;
@@ -49,26 +51,69 @@ document.addEventListener("DOMContentLoaded", () => {
         subA.textContent = h.textContent;
 
         subLi.appendChild(subA);
-        innerList.appendChild(subLi);
+        subList.appendChild(subLi);
       });
 
-    if (innerList.children.length > 0) {
-      li.appendChild(innerList);
+    if (subList.children.length > 0) {
+      li.appendChild(subList);
     }
 
     tocList.appendChild(li);
+    sectionMap.push({ section, li });
   });
 
-  // Toggle entire TOC
-  toggleBtn.addEventListener("click", () => {
-    toc.classList.toggle("collapsed");
-  });
+  /* ===== Expand / collapse ===== */
 
-  // Expand/collapse per section
+  expandAllBtn.onclick = () => {
+    document.querySelectorAll(".toc-section").forEach(li => li.classList.add("expanded"));
+  };
+
+  collapseAllBtn.onclick = () => {
+    document.querySelectorAll(".toc-section").forEach(li => li.classList.remove("expanded"));
+  };
+
   tocList.addEventListener("click", e => {
     if (e.target.classList.contains("toc-h1")) {
-      const parent = e.target.parentElement;
-      parent.classList.toggle("expanded");
+      e.target.parentElement.classList.toggle("expanded");
     }
   });
+
+  /* ===== Mobile toggle ===== */
+
+  mobileToggleBtn.onclick = () => {
+    toc.classList.toggle("mobile-visible");
+  };
+
+  /* ===== Scroll spy ===== */
+
+  const headings = Array.from(document.querySelectorAll(
+    "section.page-section, .section-content h1, .section-content h2, .section-content h3"
+  ));
+
+  function onScroll() {
+    let current = null;
+
+    for (const h of headings) {
+      if (h.getBoundingClientRect().top <= 100) {
+        current = h;
+      }
+    }
+
+    if (!current) return;
+
+    // Clear active states
+    document.querySelectorAll(".floating-toc a").forEach(a => a.classList.remove("active"));
+
+    const activeLink = document.querySelector(`.floating-toc a[href="#${current.id}"]`);
+    if (activeLink) {
+      activeLink.classList.add("active");
+
+      // Auto-expand parent section
+      const sectionLi = activeLink.closest(".toc-section");
+      if (sectionLi) sectionLi.classList.add("expanded");
+    }
+  }
+
+  document.addEventListener("scroll", onScroll);
+  onScroll();
 });

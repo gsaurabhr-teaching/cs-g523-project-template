@@ -2,10 +2,14 @@
 layout: default
 ---
 
-<nav id="floating-toc" class="floating-toc collapsed">
+<nav id="floating-toc" class="floating-toc">
   <div class="toc-header">
     <span>Contents</span>
-    <button id="toc-toggle">☰</button>
+    <div class="toc-controls">
+      <button id="toc-expand-all" title="Expand all">＋</button>
+      <button id="toc-collapse-all" title="Collapse all">－</button>
+      <button id="toc-toggle-mobile" title="Toggle TOC">☰</button>
+    </div>
   </div>
   <ul id="toc-list"></ul>
 </nav>
