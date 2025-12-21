@@ -2,12 +2,12 @@
 
 .floating-toc {
   position: sticky;
-  top: 1rem;
-  margin-top: 1rem;
+  top: 0rem;
+  margin-top: 0rem;
   align-self: flex-start;
   left: 0;
   width: 280px;
-  height: calc(100vh - 2rem);
+  height: 100vh;
   overflow-y: auto;
   background: #f8f9fa;
   border-right: 1px solid #ddd;
@@ -84,7 +84,7 @@
   margin-left: 300px;
   padding-top: 2.5rem;
   padding-bottom: 3rem;
-  margin: 0;
+  /* margin: 0; */
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
@@ -108,7 +108,7 @@
 .mobile-toc-button {
   display: none;
   position: sticky;
-  top: 0;
+  top: 0.5rem;
   margin: 0.5rem 0 0.5rem 0.5rem;
   left: 10px;
   z-index: 1100;
