@@ -1,11 +1,8 @@
-/* Page grid: banner + body */
-body {
-  display: grid;
-  grid-template-rows: auto 1fr;
-}
-
-body > *:not(header.project-banner) {
-  grid-row: 2;
+/* ===== Page shell ===== */
+.page-shell {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
 }
 
 /* ===== Floating TOC ===== */
@@ -222,9 +219,7 @@ body > *:not(header.project-banner) {
   }
 }
 
-/* Remove extra top gap before first section (desktop) */
-@media (min-width: 992px) {
-  section.page-section:first-of-type .section-heading {
-    margin-top: 0;
-  }
+.page-sections {
+  flex: 1;
+  padding-left: 2rem;
 }
