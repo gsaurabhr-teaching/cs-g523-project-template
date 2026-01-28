@@ -1,13 +1,13 @@
-## 1. System Boundary
+## System Boundary
 
-### 1.1 Inside the System
+### Inside the System
 - Infusion control logic
 - Safety monitoring and fault detection
 - Alarm generation and prioritization
 - Motor actuation commands
 - Logging of infusion and fault events
 
-### 1.2 Outside the System
+### Outside the System
 - Caregiver (user)
 - Patient
 - Flow sensor
@@ -16,7 +16,7 @@
 - Pump motor (actuator)
 - Power supply
 
-### 1.3 Assumptions
+### Assumptions
 - Sensors provide periodic updates
 - Caregiver responds to alarms
 - Power loss can occur at any time
@@ -24,9 +24,9 @@
 
 ---
 
-## 2. System Context
+## System Context
 
-### 2.1 Actors and Interfaces
+### Actors and Interfaces
 
 | Actor / Entity | Type | Interface Description |
 |---------------|------|-----------------------|
@@ -39,7 +39,7 @@
 
 ---
 
-### 2.2 System Context Diagram (Mermaid)
+### System Context Diagram
 
 ```mermaid
 flowchart LR
@@ -53,7 +53,7 @@ flowchart LR
     Pump[Infusion Pump Controller]
 ```
 
-## 3. Selected Use Cases
+## Selected Use Cases
 
 | ID   | Use Case          | Actor            | Description                                      |
 | ---- | ----------------- | ---------------- | ------------------------------------------------ |
@@ -64,7 +64,7 @@ flowchart LR
 
 ---
 
-### 3.2 Use Case Descriptions
+### Use Case Descriptions
 
 #### UC-1: Start Infusion
 - Goal: Begin medication delivery.
@@ -92,7 +92,7 @@ flowchart LR
 
 ---
 
-## 4. UML Statechart (Behavioral Model)
+## UML Statechart (Behavioral Model)
 ```mermaid
 stateDiagram-v2
     [*] --> Idle
@@ -116,19 +116,13 @@ stateDiagram-v2
 ```
 
 ---
-## 5. Safety and Error Handling (Behavioral View)
+## Safety and Error Handling (Behavioral View)
 - Safety events override normal operation.
 - Infusion is always stopped before alarms are raised.
 - Power loss forces a transition to Safe_Stop from any state.
 - Recovery requires explicit caregiver action.
 
-## 6. Relationship to Requirements
-- Functional requirements map to Idle, Configured, and Infusing.
-- Safety requirements map to Alarm and Safe_Stop.
-- Power and fault requirements are enforced via global transitions.
-- Each safety-critical requirement is enforced by at least one state or transition.
-
-## 7. Change Log
+## Change Log
 | Date | Change          | Author  |
 | ---- | --------------- | ------- |
 |      | Initial version | Example |
