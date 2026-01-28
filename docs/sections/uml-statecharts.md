@@ -1,12 +1,4 @@
-# Lab 2 – System Context, Use Cases, and Behavioral Model (Group)
-## Worked Example: Infusion Pump
-
-> **Course:** CS G523 – Software for Embedded Systems  
-> **Project:** Infusion Pump Controller  
-
----
-
-## 1. System Boundary (Agreed)
+## 1. System Boundary
 
 ### 1.1 Inside the System
 - Infusion control logic
